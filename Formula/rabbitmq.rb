@@ -46,7 +46,8 @@ class Rabbitmq < Formula
     # Enable plugins - management web UI; STOMP, MQTT, AMQP 1.0 protocols
     enabled_plugins_path = etc/"rabbitmq/enabled_plugins"
     unless enabled_plugins_path.exist?
-      enabled_plugins_path.write "[rabbitmq_management,rabbitmq_stomp,rabbitmq_amqp1_0,rabbitmq_mqtt,rabbitmq_stream]."
+      enabled_plugins_path.write "[rabbitmq_management,rabbitmq_stomp,rabbitmq_amqp1_0," + 
+                                 "rabbitmq_mqtt,rabbitmq_stream]."
     end
 
     sbin.install "#{prefix}/plugins/rabbitmq_management-#{version}/priv/www/cli/rabbitmqadmin"
